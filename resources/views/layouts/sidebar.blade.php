@@ -17,16 +17,40 @@
           
           <li class="nav-header">EXAMPLES</li>
           @if ( Auth::user()->is_admin)
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a href="{{route('products.index')}}" class="nav-link">
                 <i class="nav-icon far fa-calendar-alt"></i>
                 <p>
                   Check In
-                  {{-- <span class="badge badge-info right">2</span> --}}
                 </p>
               </a>
             </li>
+ --}}
+            <li class="nav-item has-treeview">
+            <a href="#" class="nav-link {{Request::is('inventory*')? 'active': ''}}">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                 Check In
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" style="display: {{Request::is('inventory*')? 'block;': 'none;'}}">
+              <li class="nav-item">
+                <a href="{{route('categories.index')}}" class="nav-link {{Request::is('inventory/categories*')? 'active': ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Categories</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('products.index')}}" class="nav-link {{Request::is('inventory/products*')? 'active': ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Products</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           @endif
+
           <li class="nav-item">
             <a href="{{route('check_outs.index')}}" class="nav-link">
               <i class="nav-icon far fa-image"></i>

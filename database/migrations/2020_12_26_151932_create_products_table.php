@@ -18,10 +18,10 @@ class CreateProductsTable extends Migration
             $table->string('code')->nullable();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->integer('quantity');
+            $table->float('quantity', 8, 2);
             $table->string('unit')->nullable();
-            $table->integer('price');
-            $table->integer('discount')->nullable();
+            $table->float('price', 8, 2);
+            $table->float('discount', 8, 2)->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();

@@ -75,7 +75,7 @@ class CheckOutController extends Controller
         ]);
         $bill->bill_items()->createMany($big_array);
         DB::commit();
-        return redirect()->back();
+        return redirect()->route('bills.show', ['bill'=> $bill->id]);
     }
 
     /**

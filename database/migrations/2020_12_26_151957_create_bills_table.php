@@ -17,9 +17,9 @@ class CreateBillsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('customer_id')->nullable();
             $table->foreign('customer_id')->references('id')->on('customers');
-            $table->integer('total_amount');
-            $table->integer('discount');
-            $table->integer('vat');
+            $table->float('total_amount', 8, 2);
+            $table->float('discount', 8, 2);
+            $table->float('vat', 8, 2);
             $table->timestamps();
         });
     }

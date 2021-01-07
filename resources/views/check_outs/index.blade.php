@@ -44,7 +44,7 @@
 	                              <div class="input-group-prepend">
 	                                {{-- <span class="input-group-text" id="">{{$deal->currency->symbol}}</span> --}}
 	                              </div>
-	                              <input type="number" class="form-control" id="rate" placeholder="Rate" aria-label="Rate" aria-describedby="" style="width:100px;" onkeyup="rateChange($(this));" name="price_per_unit[]" required>
+	                              <input type="number" class="form-control" id="rate" placeholder="Rate" aria-label="Rate" aria-describedby="" style="width:100px;" onkeyup="rateChange($(this));" name="price_per_unit[]" step="0.01" required>
 	                            </div>                        
 	                          </td>
 	                          <td>
@@ -52,7 +52,7 @@
 	                              <div class="input-group-prepend" >
 	                                <span class="input-group-text" id="" style="height: 100%;"><i class="fa fa-balance-scale" aria-hidden="true"></i></span>
 	                              </div>
-	                              <input type="number" class="form-control" id="qty" placeholder="Qty" aria-label="Qty" aria-describedby="" style="width:100px;" onkeyup="qtyChange($(this));"  name="quantity[]" required>
+	                              <input type="number" class="form-control" id="qty" placeholder="Qty" aria-label="Qty" aria-describedby="" style="width:100px;" onkeyup="qtyChange($(this));"  name="quantity[]" step="0.01" required>
 	                            </div>                        
 	                          </td>
 	                          <td>

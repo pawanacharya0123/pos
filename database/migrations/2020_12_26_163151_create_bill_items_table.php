@@ -19,8 +19,8 @@ class CreateBillItemsTable extends Migration
             $table->foreign('bill_id')->references('id')->on('bills');
             $table->unsignedBigInteger('product_id')->nullable();
             $table->foreign('product_id')->references('id')->on('products');
-            $table->integer('price');
-            $table->integer('quantity');
+            $table->float('price', 8, 2);
+            $table->float('quantity', 8, 2);
             $table->timestamps();
         });
     }
